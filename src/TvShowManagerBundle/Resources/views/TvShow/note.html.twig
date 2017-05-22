@@ -1,0 +1,24 @@
+{% extends '@TvShowManager/base.html.twig' %}
+
+{% block content %}
+
+    <h3>Classement - </h3> <h2> Séries / Note :</h2>
+
+    <table class="table table-responsive">
+        <thead>
+        <tr>
+            <th>Nom</th> <th>Moyenne</th>
+        </tr>
+        </thead>
+            <tbody>
+
+            {% for show in moyNotes|keys %}
+                <tr>
+                    <td>{{ show }}</td> <td>{{ moyNotes[show] }}</td>
+                </tr>
+            {% endfor %}
+
+            </tbody>
+    </table>
+
+{% endblock %}

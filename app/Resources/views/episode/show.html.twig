@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Episode</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ episode.id }}</td>
+            </tr>
+            <tr>
+                <th>Name</th>
+                <td>{{ episode.name }}</td>
+            </tr>
+            <tr>
+                <th>Season</th>
+                <td>{{ episode.season }}</td>
+            </tr>
+            <tr>
+                <th>Number</th>
+                <td>{{ episode.number }}</td>
+            </tr>
+            <tr>
+                <th>Note</th>
+                <td>{{ episode.note }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('episode_index') }}">Back to the list</a>
+        </li>
+    </ul>
+{% endblock %}

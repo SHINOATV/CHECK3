@@ -1,0 +1,30 @@
+{% extends '@TvShowManager/base.html.twig' %}
+
+{% block content %}
+
+    <h3>Liste - </h3> <h2> Episodes :</h2>
+
+    <table class="table table-responsive">
+        <thead>
+        <tr>
+            <th>Nom</th> <th>Série</th> <th>Saison</th> <th>Numéro</th> <th>Note</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for episode in episodes %}
+            <tr>
+                <td>{{ episode.name }}</td> <td>{{ episode.tvShow }}</td> <td>{{ episode.season }}</td>
+                <td>{{ episode.number }}</td> <td>{{ episode.note }}</td>
+                <td>
+                    <a href="{{ path('episodeEdit', {'episodeId': episode.id}) }}">Editer</a>
+                    <div>
+                        |-|
+                    </div>
+                    <a href="{{ path('episodeDel', {'episodeId': episode.id}) }}">Delete</a>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}
